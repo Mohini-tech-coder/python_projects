@@ -9,4 +9,4 @@ Technologies Used:
 - CSS
 - SQLite
 
-Developed by Mohini Pachauri.# python_projects
+Developed by Mohini Pachauri.
