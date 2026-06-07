@@ -1,0 +1,92 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <title>About Us</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="about-container">
+
+        <!-- BACK BUTTON -->
+
+        <button onclick="goBack()" class="back-btn">
+            ← Back
+        </button>
+
+        <!-- ABOUT SECTION -->
+
+        <div class="about-section">
+
+            <h1>About Our Project</h1>
+
+            <p>
+                Calorie Tracker is a health and fitness web application
+                that helps users track calories, exercise, water intake,
+                BMI and healthy lifestyle activities.
+            </p>
+
+        </div>
+
+        <!-- CONTACT SECTION -->
+
+        <div class="contact-section">
+
+            <h2>Contact Us</h2>
+
+            <form class="contact-form"
+                  onsubmit="sendMessage(event)">
+
+                <input type="text"
+                       placeholder="Enter Your Name"
+                       required>
+
+                <input type="email"
+                       placeholder="Enter Your Email"
+                       required>
+
+                <textarea placeholder="Enter Message"
+                          required></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function goBack(){
+
+            window.history.back();
+        }
+
+        function sendMessage(event){
+
+            event.preventDefault();
+
+            alert("Message Sent Successfully!");
+        }
+
+    </script>
+
+</body>
+</html>

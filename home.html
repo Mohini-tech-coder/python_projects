@@ -1,0 +1,128 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Calorie Tracker</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Calorie Tracker</h1>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/login/">Login</a>
+
+            <a href="/signup/">Sign Up</a>
+
+            <a href="/dashboard/">Dashboard</a>
+
+            <a href="/diet/">Diet</a>
+
+            <a href="/exercise/">Exercise</a>
+
+            <a href="/water/">Water</a>
+
+            <a href="/bmi/">Progress Tracker</a>
+
+            <a href="/recommendation/">Tips</a>
+
+            <a href="/about/">About</a>
+
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="content">
+
+            <h2>Track Your Health Daily</h2>
+
+            <p>
+                Monitor your calories, exercise, diet and stay fit.
+            </p>
+
+            <button onclick="startTracking()">
+                Start Tracking
+            </button>
+
+        </div>
+
+        <div class="image">
+
+            <img src="{% static 'images/health.png' %}" alt="">
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOD ENTRY FORM -->
+
+    <section class="food-form">
+
+        <h2>Add Food</h2>
+
+        <form method="POST">
+
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit">
+                Save
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- SAVED DATA -->
+
+    <section class="saved-data">
+
+        <h2>Saved Foods</h2>
+
+        {% for food in foods %}
+
+            <p>
+                {{ food.food_name }} - {{ food.calories }} calories
+            </p>
+
+        {% endfor %}
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function startTracking(){
+
+            alert("Welcome to Calorie Tracker!");
+
+            window.location.href = "/dashboard/";
+        }
+
+    </script>
+
+</body>
+</html>

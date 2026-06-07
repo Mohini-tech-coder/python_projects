@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <title>Recommendations</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="recommend-container">
+
+        <!-- BACK BUTTON -->
+
+        <button onclick="goBack()" class="back-btn">
+            ← Back
+        </button>
+
+        <h1>Health Recommendations</h1>
+
+        <div class="recommend-cards">
+
+            <!-- CARD 1 -->
+
+            <div class="recommend-card">
+
+                <h2>Weight Loss</h2>
+
+                <p>
+                    Eat more vegetables and avoid junk food.
+                </p>
+
+                <button onclick="showTip('Weight Loss')">
+                    View Tip
+                </button>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="recommend-card">
+
+                <h2>Muscle Gain</h2>
+
+                <p>
+                    Increase protein intake and workout daily.
+                </p>
+
+                <button onclick="showTip('Muscle Gain')">
+                    View Tip
+                </button>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="recommend-card">
+
+                <h2>Stay Hydrated</h2>
+
+                <p>
+                    Drink at least 8 glasses of water daily.
+                </p>
+
+                <button onclick="showTip('Hydration')">
+                    View Tip
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function goBack(){
+            window.history.back();
+        }
+
+        function showTip(type){
+
+            if(type === "Weight Loss"){
+                alert("Eat healthy food and avoid sugary drinks.");
+            }
+
+            else if(type === "Muscle Gain"){
+                alert("Consume protein-rich food and do strength training.");
+            }
+
+            else{
+                alert("Drink enough water to stay active and healthy.");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

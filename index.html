@@ -1,0 +1,93 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Calorie Tracker</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <h1>Calorie Tracker</h1>
+
+        <nav>
+
+            <a href="/">Home</a>
+
+            <a href="/dashboard/">Dashboard</a>
+
+            <a href="/diet/">Diet</a>
+
+            <a href="/exercise/">Exercise</a>
+
+            <a href="/water/">Water</a>
+
+            <a href="/bmi/">BMI</a>
+
+            <a href="/login/">Login</a>
+
+            <a href="/signup/">Signup</a>
+            
+            <a href="/about/">About</a>
+
+
+        </nav>
+
+    </header>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero">
+
+        <div class="hero-text">
+
+            <h2>
+                Track Your Calories & Stay Healthy 💪
+            </h2>
+
+            <br>
+
+            <p>
+                Monitor your diet, water intake,
+                exercise and BMI easily.
+            </p>
+
+            <br>
+
+            <a href="/dashboard/">
+                <button>
+                    Start Tracking
+                </button>
+            </a>
+
+        </div>
+
+        <!-- IMAGE -->
+
+        <div class="hero-image">
+
+            <img src="{% static 'images/fitness.png' %}"
+                 width="400">
+
+        </div>
+
+    </section>
+
+</body>
+
+</html>

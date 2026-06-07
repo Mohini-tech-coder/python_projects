@@ -1,0 +1,90 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Water Intake</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="water-container">
+
+        <!-- BACK BUTTON -->
+
+        <button onclick="goBack()" class="back-btn">
+            ← Back
+        </button>
+
+        <h1>Daily Water Intake 💧</h1>
+
+        <div class="water-card">
+
+            <h2>Today's Goal</h2>
+
+            <p id="water-count">0 / 8 Glasses</p>
+
+            <button onclick="addWater()">
+                Add Water
+            </button>
+
+        </div>
+
+        <!-- WATER STATUS -->
+
+        <div class="water-status">
+
+            <div class="glass"><h3>1</h3></div>
+            <div class="glass"><h3>2</h3></div>
+            <div class="glass"><h3>3</h3></div>
+            <div class="glass"><h3>4</h3></div>
+            <div class="glass"><h3>5</h3></div>
+            <div class="glass"><h3>6</h3></div>
+            <div class="glass"><h3>7</h3></div>
+            <div class="glass"><h3>8</h3></div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        let count = 0;
+
+        function goBack(){
+            window.history.back();
+        }
+
+        function addWater(){
+
+            if(count < 8){
+
+                count++;
+
+                document.getElementById("water-count").innerHTML =
+                count + " / 8 Glasses";
+
+                alert("Water Added Successfully!");
+            }
+
+            else{
+                alert("Daily Goal Completed!");
+            }
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    
+    <title>Diet Page</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="diet-container">
+
+        <!-- BACK BUTTON -->
+
+        <button onclick="goBack()" class="back-btn">
+            ← Back
+        </button>
+
+        <h1>Today's Diet</h1>
+
+        <!-- FOOD FORM -->
+
+        <form class="diet-form"
+              onsubmit="addFood(event)">
+
+            <input type="text"
+                   id="food-name"
+                   placeholder="Food Name"
+                   required>
+
+            <input type="number"
+                   id="food-calories"
+                   placeholder="Calories"
+                   required>
+
+            <button type="submit">
+                Add Food
+            </button>
+
+        </form>
+
+        <!-- TABLE -->
+
+        <table id="food-table">
+
+            <tr>
+
+                <th>Food</th>
+
+                <th>Calories</th>
+
+            </tr>
+
+            <tr>
+
+                <td>Apple</td>
+
+                <td>95</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Rice</td>
+
+                <td>200</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Milk</td>
+
+                <td>120</td>
+
+            </tr>
+
+        </table>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function goBack(){
+
+            window.history.back();
+        }
+
+        function addFood(event){
+
+            event.preventDefault();
+
+            let foodName =
+            document.getElementById("food-name").value;
+
+            let calories =
+            document.getElementById("food-calories").value;
+
+            let table =
+            document.getElementById("food-table");
+
+            let newRow = table.insertRow();
+
+            let cell1 = newRow.insertCell(0);
+
+            let cell2 = newRow.insertCell(1);
+
+            cell1.innerHTML = foodName;
+
+            cell2.innerHTML = calories;
+
+            alert("Food Added Successfully!");
+
+            document.getElementById("food-name").value = "";
+
+            document.getElementById("food-calories").value = "";
+        }
+
+    </script>
+
+</body>
+</html>

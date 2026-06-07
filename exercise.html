@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Exercise Page</title>
+
+    <link rel="stylesheet"
+          href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+
+    <div class="exercise-container">
+
+        <!-- BACK BUTTON -->
+
+        <button onclick="goBack()" class="back-btn">
+            ← Back
+        </button>
+
+        <h1>Daily Exercise</h1>
+
+        <div class="exercise-cards">
+
+            <!-- CARD 1 -->
+
+            <div class="exercise-card">
+
+                <img src="{% static 'images/yoga.jpg' %}" alt="">
+
+                <h2>Yoga</h2>
+
+                <p>30 Minutes</p>
+
+                <p>Burn: 150 Calories</p>
+
+                <button onclick="startExercise('Yoga')">
+                    Start
+                </button>
+
+            </div>
+
+            <!-- CARD 2 -->
+
+            <div class="exercise-card">
+
+                <img src="{% static 'images/running.jpg' %}" alt="">
+
+                <h2>Running</h2>
+
+                <p>45 Minutes</p>
+
+                <p>Burn: 300 Calories</p>
+
+                <button onclick="startExercise('Running')">
+                    Start
+                </button>
+
+            </div>
+
+            <!-- CARD 3 -->
+
+            <div class="exercise-card">
+
+                <img src="{% static 'images/gym.jpg' %}" alt="">
+
+                <h2>Gym Workout</h2>
+
+                <p>1 Hour</p>
+
+                <p>Burn: 500 Calories</p>
+
+                <button onclick="startExercise('Gym Workout')">
+                    Start
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        function goBack(){
+            window.history.back();
+        }
+
+        function startExercise(name){
+
+            alert(name + " Started Successfully!");
+        }
+
+    </script>
+
+</body>
+</html>
